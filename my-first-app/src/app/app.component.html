@@ -1,6 +1,9 @@
 <div class="container">
-  <p>{{ serverCreationStatus }}</p>
-  <hr>
+
+  <div *ngIf="serverCreated">
+    <p >{{ serverCreationStatus }}</p>
+    <hr>
+  </div>
   <div class="row">
     <div class="col-6">
       <input type="text" name="serverName" class="form-control" [(ngModel)]="serverName">
@@ -11,6 +14,6 @@
 
   </div>
   <hr>
-  <app-server></app-server>
+  <app-server *ngFor="let name of servers; let i = index" [index] = "i+1" [server-name]="name" ></app-server>
 
 </div>
