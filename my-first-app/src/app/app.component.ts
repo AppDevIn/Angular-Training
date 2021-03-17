@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   allowNewServer: boolean = false
+  serverCreationStatus: String = "No server has been created"
+  serverName = "Server 01"
+
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.allowNewServer = true
+    }, 2000)
+  }
+
+  onCreateServer(){
+    this.serverCreationStatus = `Server has been created! Name is ${this.serverName}`
+  }
+
 
 }
