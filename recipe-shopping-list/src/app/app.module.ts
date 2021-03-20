@@ -9,6 +9,7 @@ import { RecipeItemComponent } from './Recipe-Book/recipe-list/recipe-item/recip
 import { RecipeDetailComponent } from './Recipe-Book/recipe-detail/recipe-detail.component';
 import { HeaderComponent } from './Header/header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,10 @@ import { RecipesComponent } from './recipes/recipes.component';
     RecipeItemComponent,
     RecipeDetailComponent,
     HeaderComponent,
-    RecipesComponent
+    RecipesComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
