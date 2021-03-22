@@ -5,5 +5,8 @@ a {
 
 button {
   margin: 20px 10px 0px 0px;
+}
 
+.open {
+  display: block;
 }

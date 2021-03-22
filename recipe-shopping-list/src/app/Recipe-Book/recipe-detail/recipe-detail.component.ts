@@ -7,6 +7,7 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-detail.component.css'],
 })
 export class RecipeDetailComponent implements OnInit {
+  open: boolean = false;
   @Input() recipe?: Recipe;
 
   constructor() {}
