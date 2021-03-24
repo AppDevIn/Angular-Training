@@ -6,6 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  open: boolean = false;
   @Output() navSelected = new EventEmitter<string>();
 
   selected: string = 'recipe';
