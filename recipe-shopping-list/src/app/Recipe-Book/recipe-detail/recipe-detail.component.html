@@ -33,7 +33,9 @@
         class="dropdown-menu"
         aria-labelledby="dropdownMenuLink"
       >
-        <a class="dropdown-item" href="#">To shopping list</a>
+        <a (click)="addShoppingList()" class="dropdown-item" href="#"
+          >To shopping list</a
+        >
         <a class="dropdown-item" href="#">Edit the recipe</a>
         <a class="dropdown-item" href="#">Delete Recipe</a>
       </div>
@@ -45,6 +47,15 @@
     {{ recipe?.description }}
   </div>
 </div>
-<div class="row">
-  <div class="col-12">Ingridents</div>
+<div *ngIf="recipe?.ingredients != []; else noIngredients" class="row">
+  <div class="col-12">
+    <ul class="list-group">
+      <li *ngFor="let ingr of recipe?.ingredients" class="list-group-item">
+        {{ ingr.name }} ({{ ingr.amount }})
+      </li>
+    </ul>
+  </div>
 </div>
+<ng-template #noIngredients>
+  <p>No Ingredients available</p>
+</ng-template>
