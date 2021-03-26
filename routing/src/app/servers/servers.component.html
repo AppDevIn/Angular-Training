@@ -4,15 +4,19 @@
       <a
         href="#"
         class="list-group-item"
-        *ngFor="let server of servers">
+        [routerLink]="['/server', server.id, 'edit']"
+        [queryParams]="{ allowEdit: 1 }"
+        fragment="loading"
+        *ngFor="let server of servers"
+      >
         {{ server.name }}
       </a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <button (click)="onReload()" class="btn btn-primary">Reload Page</button>
     <app-edit-server></app-edit-server>
-    <hr>
+    <hr />
     <app-server></app-server>
   </div>
 </div>
-
