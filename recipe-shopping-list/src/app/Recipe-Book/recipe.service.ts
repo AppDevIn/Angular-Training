@@ -9,12 +9,14 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'A Test Recipe',
       'This is simply just a desciption',
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fweneedfun.com%2Fwp-content%2Fuploads%2F2015%2F10%2FBeautiful-Food-Photos-9.jpg&f=1&nofb=1',
       [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
     ),
     new Recipe(
+      2,
       'A Test Recipe',
       'This is simply just a desciption',
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fweneedfun.com%2Fwp-content%2Fuploads%2F2015%2F10%2FBeautiful-Food-Photos-9.jpg&f=1&nofb=1',
@@ -24,8 +26,12 @@ export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
 
-  getRecipe() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number): Recipe | undefined {
+    return this.recipes.find((r) => r.id === id);
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[] = []) {

@@ -17,7 +17,7 @@
     <div class="dropdown show">
       <a
         class="btn btn-secondary dropdown-toggle"
-        href="#"
+        style="cursor: pointer"
         role="button"
         id="dropdownMenuLink"
         data-toggle="dropdown"
@@ -33,11 +33,16 @@
         class="dropdown-menu"
         aria-labelledby="dropdownMenuLink"
       >
-        <a (click)="addShoppingList()" class="dropdown-item" href="#"
+        <a
+          (click)="addShoppingList()"
+          class="dropdown-item"
+          style="cursor: pointer"
           >To shopping list</a
         >
-        <a class="dropdown-item" href="#">Edit the recipe</a>
-        <a class="dropdown-item" href="#">Delete Recipe</a>
+        <a (click)="onClick()" class="dropdown-item" style="cursor: pointer"
+          >Edit the recipe</a
+        >
+        <a class="dropdown-item" style="cursor: pointer">Delete Recipe</a>
       </div>
     </div>
   </div>

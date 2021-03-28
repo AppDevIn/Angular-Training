@@ -7,16 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   open: boolean = false;
-  @Output() navSelected = new EventEmitter<string>();
-
-  selected: string = 'recipe';
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  onSelect(value: string) {
-    this.selected = value;
-    this.navSelected.emit(value);
-  }
 }
