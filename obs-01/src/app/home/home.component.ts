@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor() {}
 
   private intervalSubscription: Subscription;
-
+O
   ngOnDestroy(): void {
     this.intervalSubscription.unsubscribe();
   }
